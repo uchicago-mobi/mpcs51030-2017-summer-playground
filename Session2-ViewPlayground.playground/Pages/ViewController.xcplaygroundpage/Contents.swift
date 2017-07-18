@@ -1,7 +1,7 @@
 //:[Previous](@previous)
 
 import UIKit
-import XCPlayground
+import PlaygroundSupport
 
 //: Create a view controller
 class VC: UIViewController {
@@ -41,8 +41,8 @@ class VC: UIViewController {
 //:
 let vc = VC()
 
-XCPlaygroundPage.currentPage.liveView = vc
-XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
+//: Set the playgrounds `liveView` to the container view
+//: tell it to run indefinately
+PlaygroundPage.current.liveView = vc
+PlaygroundPage.current.needsIndefiniteExecution = true
 
-
-//: [Next](@next)

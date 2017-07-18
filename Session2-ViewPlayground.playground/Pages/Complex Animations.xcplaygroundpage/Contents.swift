@@ -1,13 +1,11 @@
 //: [Previous](@previous)
 
-import UIKit
-import XCPlayground
+
 
 //: # View Playground
 
 import UIKit
-import XCPlayground
-
+import PlaygroundSupport
 
 //: ## Create a Container
 //: Create a container view that represents iPhone 6 "screen".

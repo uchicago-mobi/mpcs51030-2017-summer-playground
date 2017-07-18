@@ -11,10 +11,10 @@ import Foundation
 
 // Declare an optional (the default value is `nil`)
 var device: String?
-print(device)
+print(device ?? "Can't find device")
 
 // Declare an optinal and assign it a value
-var phone: String? = ""
+var phone: String?
 var pad: String? = "iPad 2"
 
 // The value type is 'optional'
@@ -70,7 +70,7 @@ print("Implicit unwrapped! \(optionalString2.uppercased())")
 //: ## Optional Chaining
 //: Optional chaining is a concise way to work with optionals quickly without using if/let and a conditional block each time.
 
-var maybeString: String? = "The eagle has landed"
+var maybeString: String?
 
 // If `maybeString` is not `nil` then `.uppercaseString` will be evaluated.  If it is `nil`, it will return `nil`
 

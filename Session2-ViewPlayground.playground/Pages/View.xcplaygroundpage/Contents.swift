@@ -1,7 +1,8 @@
 //: # View Playground
 
 import UIKit
-import XCPlayground
+import PlaygroundSupport
+
 
 
 //: ## Create a Container
@@ -9,23 +10,26 @@ import XCPlayground
 //: This allows you to simulate add/removing/animating views on
 //: a parent view (i.e. a view controller's main view)
 
-let containerFrame = CGRectMake(0, 0, 375.0, 667.0)
+let containerFrame = CGRect(x: 0, y: 0, width: 375, height: 667)
 let containerView = UIView(frame: containerFrame)
-containerView.backgroundColor = UIColor.lightGrayColor()
+containerView.backgroundColor = UIColor.lightGray
+
+
 
 //: Set the playgrounds `liveView` to the container view
 //: tell it to run indefinately
-XCPlaygroundPage.currentPage.liveView = containerView
-XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
+PlaygroundPage.current.liveView = containerView
+PlaygroundPage.current.needsIndefiniteExecution = true
+
 
 //: Add a green box to our container view
-let greenView = UIView(frame: CGRectMake(0, 0, 50, 50))
-greenView.backgroundColor = UIColor.greenColor()
+let greenView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+greenView.backgroundColor = UIColor.green
 containerView.addSubview(greenView)
 
 //: Add a red box to our container view
 let redView = UIView(frame: CGRect(x: 50.0, y: 50.0, width: 100.0, height: 100.0))
-redView.backgroundColor = UIColor.redColor()
+redView.backgroundColor = UIColor.red
 containerView.addSubview(redView)
 
 //: ## Circle
@@ -36,7 +40,7 @@ containerView.addSubview(redView)
 let circle = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
 circle.center = containerView.center
 circle.layer.cornerRadius = 25.0
-circle.backgroundColor = UIColor.orangeColor()
+circle.backgroundColor = UIColor.orange
 
 // Add the view to the containerView
 containerView.addSubview(circle);

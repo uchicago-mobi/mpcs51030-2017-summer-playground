@@ -36,8 +36,9 @@ if let apples1 = apples {
 //: Using guard we can test against the condition that an optional variable
 //: has a value and the unwrap it.  The unwrapped value will be accessible
 //: outside the scope of the guard statement.
+var ap: Int? = 5
 
-guard let apples2 = apples else {
+guard let apples2 = ap else {
   print("We don't have apples")
   
   // The guard statement needs to return 
@@ -61,6 +62,8 @@ func guardApplesAndOranges(apples: Int?, oranges: Int?) -> String {
     let orange = oranges else {
       return "We don't have apples or oranges"
   }
+  
+  
   return "We have \(apple) apples and \(orange) oranges"
 }
 

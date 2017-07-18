@@ -97,6 +97,11 @@
 					37D39C7D1D2207DB009B5BFF = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0830;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
