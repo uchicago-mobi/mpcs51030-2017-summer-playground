@@ -5,8 +5,9 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //: Download an image using `URLSession`
 //: ======================================
 
+
 // String representation of the URL
-let urlString = "http://kittentoob.com/wp-content/uploads/sites/4/2014/11/Extremely-cute-kitten_large.jpg"
+let urlString = "http://fixnation.org/wordpress/wp-content/uploads/2014/03/cats-kittens_00379052.jpg"
 
 // Create an NSURL object from the string.  There are no advanced
 // configurations on this `URL`

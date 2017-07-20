@@ -96,10 +96,7 @@ getIssues(url: urlString) { (issues) in
   // persist beyond the closure block.  The property should
   // be of the same type as the parameter here (eg [[String: AnyObject]]?)
 
-  // For debugging
-  print(issues as Any)
-  
-  
+ 
   // Reload the table.  The tables data source should be the property you copied the
   // issues to (above). Remember to refresh the table on the main thread
   DispatchQueue.main.async {
@@ -107,6 +104,11 @@ getIssues(url: urlString) { (issues) in
     // You should reload your table here.
     //tableView.reload()
   }
+  
+  
+  // For debugging
+  print(issues as Any)
+  
   
 }
 
