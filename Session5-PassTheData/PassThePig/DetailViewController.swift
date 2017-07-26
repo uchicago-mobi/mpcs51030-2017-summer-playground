@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     print("2. View Will Appear")
-    self.pigLabel.text = "View will appear"
+    self.pigLabel.text = passedData
   }
   
   override func viewDidAppear(_ animated: Bool) {

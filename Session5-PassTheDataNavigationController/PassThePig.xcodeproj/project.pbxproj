@@ -83,7 +83,6 @@
 			children = (
 				24738F571E3F16DE00DAB01B /* PassThePig */,
 				24738F6C1E3F16E000DAB01B /* PassThePigTests */,
-				24738F771E3F16E000DAB01B /* PassThePigUITests */,
 				24738F561E3F16DE00DAB01B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +108,7 @@
 				24738F5F1E3F16DF00DAB01B /* Assets.xcassets */,
 				24738F611E3F16DF00DAB01B /* LaunchScreen.storyboard */,
 				24738F641E3F16DF00DAB01B /* Info.plist */,
+				24738F771E3F16E000DAB01B /* PassThePigUITests */,
 			);
 			path = PassThePig;
 			sourceTree = "<group>";
@@ -129,7 +129,7 @@
 				24738F7A1E3F16E000DAB01B /* Info.plist */,
 			);
 			path = PassThePigUITests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -513,6 +513,7 @@
 				24738F7F1E3F16E000DAB01B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		24738F801E3F16E000DAB01B /* Build configuration list for PBXNativeTarget "PassThePigTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +522,7 @@
 				24738F821E3F16E000DAB01B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		24738F831E3F16E000DAB01B /* Build configuration list for PBXNativeTarget "PassThePigUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +531,7 @@
 				24738F851E3F16E000DAB01B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

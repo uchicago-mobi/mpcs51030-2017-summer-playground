@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     print("1. View Did Load")
+    print(view.subviews)
   }
   
   override func viewWillAppear(_ animated: Bool) {

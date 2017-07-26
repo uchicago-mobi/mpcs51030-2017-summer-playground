@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MCw-vp-QoF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dZd-f3-cQ3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="YTf-DN-k3J">
+            <objects>
+                <navigationController id="dZd-f3-cQ3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEM-eO-8u5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pM3-Ao-aJw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyq-8i-Xgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1018" y="61"/>
+        </scene>
+        <!--White View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PassThePig" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="White View Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="PassThePig" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -28,7 +44,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                                         <state key="normal" title="Pass the Pig"/>
                                         <connections>
-                                            <segue destination="Svd-UX-oI5" kind="show" id="e02-BF-CFz"/>
+                                            <segue destination="Svd-UX-oI5" kind="show" id="IeY-F3-yjh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nf4-JS-HhQ">
@@ -49,11 +65,15 @@
                             <constraint firstItem="8VH-1y-DRF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tfZ-Ef-Y8D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5JD-8c-M6L"/>
+                    <navigationItem key="navigationItem" id="5JD-8c-M6L">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Bua-Ks-g0a">
+                            <color key="tintColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="deviceRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960.79999999999995" y="60.719640179910051"/>
+            <point key="canvasLocation" x="2049" y="75"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="VJB-Lv-uqE">
@@ -91,6 +111,7 @@
                             <constraint firstItem="3Pj-3x-NcZ" firstAttribute="centerY" secondItem="pUW-Zy-8UH" secondAttribute="centerY" id="dgn-pS-uzb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="DoD-t7-IWO"/>
                     <connections>
                         <outlet property="pigLabel" destination="3Pj-3x-NcZ" id="bYa-dr-BmQ"/>
                     </connections>
@@ -98,7 +119,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpE-jC-383" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Zfz-cS-RRY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1983.2" y="60.719640179910051"/>
+            <point key="canvasLocation" x="3183" y="61"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ji2-QP-2fJ">
+            <objects>
+                <viewController id="h65-ep-QlL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cax-BI-P7g"/>
+                        <viewControllerLayoutGuide type="bottom" id="ERF-8V-suZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OrU-su-7Id">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yfg-ub-lOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5069.6000000000004" y="353.9730134932534"/>
         </scene>
         <!--Detached View Controller-->
         <scene sceneID="UiY-pC-pjM">
@@ -136,25 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="as5-Sc-nlR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="737"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="QaX-vi-xLe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MCw-vp-QoF" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hi5-gn-V3p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yD5-PO-KAn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="amh-Zn-gKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="21.600000000000001" y="60.719640179910051"/>
+            <point key="canvasLocation" x="1428" y="787"/>
         </scene>
     </scenes>
 </document>

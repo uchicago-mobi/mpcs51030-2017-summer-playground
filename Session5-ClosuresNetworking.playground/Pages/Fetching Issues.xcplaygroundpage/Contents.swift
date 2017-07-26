@@ -87,7 +87,7 @@ let urlString = "https://api.github.com/repos/uchicago-mobi/mpcs51030-2017-winte
 
 /// Get all the issues from GitHub. The issues will be returned as `issues` in the closure.
 /// This would be a great place to update the table view showing the issues.  Remember that
-/// any UIKit elements need to be updated on the main thread.
+/// any UIKit elements need to be updated on the $main thread.
 getIssues(url: urlString) { (issues) in
   
   // The data is available in this closure through the `issues` variable
