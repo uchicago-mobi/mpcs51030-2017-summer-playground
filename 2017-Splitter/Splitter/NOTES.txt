@@ -1,0 +1,125 @@
+   let searchController = UISearchController(searchResultsController: nil)
+  
+
+///
+/// UISearchResultsDelegate
+///
+extension MapTableViewController: UISearchResultsUpdating {
+  func updateSearchResultsForSearchController(searchController: UISearchController) {
+    //let searchBar = searchController.searchBar
+    //let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+    let scope = "Dummy Text to hide scope for now"
+    filterResultsForSearchText(searchController.searchBar.text!,scope: scope)
+  }
+}
+
+
+    
+///
+/// UISearchBarDelegate
+///
+extension MapTableViewController: UISearchBarDelegate {
+  func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+    filterResultsForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+  }
+}
+
+// IN VIEWDIDLOAD
+
+    // Load up the search controller
+    searchController.searchResultsUpdater = self
+    searchController.dimsBackgroundDuringPresentation = false
+    searchController.searchBar.searchBarStyle = .Prominent
+    //searchController.hidesNavigationBarDuringPresentation = false
+    
+    //searchController.searchBar.scopeButtonTitles = ["Content Codes", "Code Description"]
+    //searchController.searchBar.delegate = self
+    
+    // Place the search bar in the header
+    tableView.tableHeaderView = searchController.searchBar
+    //navigationItem.titleView = searchController.searchBar
+
+
+
+
+
+
+  
+  /// Filter the data store by the text query.  This is searching against the
+  /// content codes.  ///
+  ///
+  /// - Todo: Search against the text
+  ///
+  func filterResultsForSearchText(text: String, scope: String = "All") {
+    print("SearchBar: \(text) Scopte: \(scope)")
+
+    if text.characters.count == 0 {
+      currentPredicate = nil//NSPredicate(format: "TRUEPREDICATE")
+    } else {
+      currentPredicate = NSPredicate(format: "standards.identifier CONTAINS[cd] %@", text)
+    }
+    fetch()
+    tableView.reloadData()
+  }
+
+
+=============================================================
+
+    
+//    // Make a request for all open data from GitHub
+//    issuesRequestion("https://ajax.googleapis.com/ajax/services/search/news?v=1.1&q=obama") { (response) -> Void in
+//      //
+//      print(response)
+//    }
+
+ 
+  func issuesRequestion(urlString: String, completion:([String: AnyObject]?) -> Void) {
+    
+    // Test that we can convert the `String` into an `NSURL` object.  If we can
+    // not, then crash the application.
+    guard let url = NSURL(string: urlString)  else {
+      fatalError("No URL")
+    }
+    
+    // Create a `NSURLSession` object
+    let session = NSURLSession.sharedSession()
+    
+    // Create a task for the session object to complete
+    let task = session.dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
+      
+      // Check for errors that occurred during the download.  If found, execute
+      // the completion block with `nil`
+      guard error == nil else {
+        print("error: \(error!.localizedDescription): \(error!.userInfo)")
+        completion(nil)
+        return
+      }
+      
+      // Print the response headers (for debugging purpose only)
+      print(response)
+      
+      // Test that the data has a value and unwrap it to the variable `let`.  If
+      // it is `nil` than pass `nil` to the completion closure.
+      guard data != nil else {
+        print("There was no data")
+        completion(nil)
+        return
+      }
+      
+      // Unserialze the JSON that was retrieved into an Array of Dictionaries.
+      // Pass is as parameter to the completion block.
+      do {
+        let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+        if let issues = json as? [String: AnyObject] {
+          completion(issues)
+        }
+      } catch {
+        print("error serializing JSON: \(error)")
+        completion(nil)
+      }
+    })
+    
+    // Start the downloading.  NSURLSession objects are created in the paused
+    // state, so to start it we need to tell it to *resume*
+    task.resume()
+  }
